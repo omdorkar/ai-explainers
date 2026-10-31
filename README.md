@@ -6,6 +6,7 @@ Live site: https://omdorkar.github.io/ai-explainers/
 
 - The 54 guide posts went online together on the date in `SITE.guideReleased`.
 - Six more "Om writes" posts (reader questions and look-backs) are published later, each with the real date it was written. `tools/check_posts.js` refuses any date before 30 October 2026 or in the future.
+- Every post opens with an infographic and includes a worked real-life example, common mistakes and practical tips, in all three languages.
 - Plan: `docs/SERIES_PLAN.md`. How to publish: `docs/HOW_TO_PUBLISH.md`.
 
 Related project: [Vadodara Access Map](https://omdorkar.github.io/vadodara-access-map/).
