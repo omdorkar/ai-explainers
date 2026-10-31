@@ -11,4 +11,6 @@ window.POST_FILES = [
   'data/posts-46-51.js',
   'data/posts-52-56.js',
   'data/posts-57-60.js',
+  // Extra detail and pictures (window.EXTRAS), merged into posts by id.
+  'data/extras-01-06.js',
 ];

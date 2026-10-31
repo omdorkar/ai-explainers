@@ -17,7 +17,8 @@ function run() {
   function load(rel) { new Function('window', read(rel))(window); }
   load('data/site.js');
   load('data/manifest.js');
-  window.POSTS = [];
+  window.POSTS = []; window.EXTRAS = {};
+  load('data/figures.js');
   var fileErrors = [];
   window.POST_FILES.forEach(function (f) {
     try { load(f); } catch (e) { fileErrors.push(f + ': ' + e.message); }
@@ -69,6 +70,14 @@ function run() {
       if (!p[l].body || !p[l].body.length) errors.push(name + ': "Om writes" post published but ' + l + ' body is empty');
     });
     published.push(p);
+  });
+
+  Object.keys(window.EXTRAS).forEach(function (id) {
+    var x = window.EXTRAS[id];
+    if (!ids[id]) errors.push('extras for unknown post id: ' + id);
+    if (x.fig && !window.FIGS[x.fig]) errors.push(id + ': unknown picture ' + x.fig);
+    if (x.fig) { ['gu', 'mr', 'en'].forEach(function (l) { try { window.FIGS[x.fig](l); } catch (e) { errors.push(id + ': picture ' + x.fig + ' fails in ' + l + ': ' + e.message); } }); }
+    ['gu', 'mr'].forEach(function (l) { if (!x.more || !x.more[l] || !x.more[l].length) errors.push(id + ': extras missing ' + l); });
   });
 
   published.sort(function (a, b) { return a.week - b.week; });

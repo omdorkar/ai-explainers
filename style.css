@@ -11,6 +11,9 @@
   --ask: #f2f0fb;
   --ask-line: #b3a9e0;
   --draft: #fff4c2;
+  --bad: #b42318;
+  --bad-soft: #fde8e7;
+  --key: #e9e4db;
   font-family: 'Noto Sans Gujarati', 'Noto Sans Devanagari', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 @media (prefers-color-scheme: dark) {
@@ -18,12 +21,14 @@
     --bg: #17181b; --surface: #202227; --ink: #ecebe8; --muted: #a3a7ad; --line: #34373d;
     --accent: #f0905c; --accent-soft: #3a2a20; --tip: #1f2e22; --tip-line: #4c7a52;
     --ask: #26233a; --ask-line: #5d54a0; --draft: #3d3613;
+    --bad: #f97066; --bad-soft: #3b1f1d; --key: #34373d;
   }
 }
 :root[data-theme="dark"] {
   --bg: #17181b; --surface: #202227; --ink: #ecebe8; --muted: #a3a7ad; --line: #34373d;
   --accent: #f0905c; --accent-soft: #3a2a20; --tip: #1f2e22; --tip-line: #4c7a52;
   --ask: #26233a; --ask-line: #5d54a0; --draft: #3d3613;
+    --bad: #f97066; --bad-soft: #3b1f1d; --key: #34373d;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-size: 18px; line-height: 1.7; }
@@ -63,3 +68,18 @@ footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .85r
   body { background: #fff; color: #000; font-size: 15pt; }
   .tip, .ask, .note { border: 1px solid #999; background: #fff; }
 }
+/* Explainer pictures (data/figures.js) */
+.fig { margin: 24px auto; max-width: 420px; }
+.fig svg { width: 100%; height: auto; display: block; }
+.fig figcaption { color: var(--muted); font-size: .9rem; text-align: center; margin-top: 8px; }
+.fg-t { fill: var(--ink); }
+.fg-m { fill: var(--muted); }
+.fg-box { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.fg-soft { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.fg-ok { fill: var(--tip); stroke: var(--tip-line); stroke-width: 1.5; }
+.fg-bad { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 1.5; }
+.fg-key { fill: var(--key); }
+.fg-mic { fill: var(--accent); }
+.fg-arrow { stroke: var(--muted); stroke-width: 2; fill: none; stroke-linecap: round; }
+.fg-ah { fill: var(--muted); }
+@media print { .fig { break-inside: avoid; } }
