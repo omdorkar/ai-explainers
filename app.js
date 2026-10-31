@@ -116,10 +116,24 @@
     var intro = SITE.intro[lang];
     var guideCount = POSTS.filter(inGuide).length;
     var released = guideCount ? '<p class="meta">' + esc(UI.released[lang].replace('{n}', guideCount).replace('{d}', fmtDate(SITE.guideReleased))) + '</p>' : '';
+    var L = {
+      city: { gu: 'વડોદરા', mr: 'वडोदरा', en: 'Vadodara' },
+      parts: { gu: 'ભાગ', mr: 'भाग', en: 'parts' },
+      langs: { gu: 'ભાષાઓ', mr: 'भाषा', en: 'languages' },
+      free: { gu: 'મફત', mr: 'मोफत', en: 'Free' },
+      share: { gu: 'વાંચવા અને શેર કરવા', mr: 'वाचायला आणि शेअर करायला', en: 'to read and share' },
+      all: { gu: 'બધા ભાગ', mr: 'सर्व भाग', en: 'All parts' }
+    };
+    var facts = '<ul class="facts">' +
+      '<li><b>' + list.length + '</b>' + esc(L.parts[lang]) + '</li>' +
+      '<li><b>3</b>' + esc(L.langs[lang]) + '</li>' +
+      '<li><b>' + esc(L.free[lang]) + '</b>' + esc(L.share[lang]) + '</li></ul>';
     main.innerHTML =
-      '<h1>' + esc(UI.series[lang]) + '</h1><p class="lede">' + esc(UI.lede[lang]) + '</p>' + released +
+      '<section class="hero"><p class="kicker">' + esc(SITE.author) + ' · ' + esc(L.city[lang]) + '</p>' +
+      '<h1>' + esc(UI.series[lang]) + '</h1><p class="lede">' + esc(UI.lede[lang]) + '</p>' + facts + released + '</section>' +
       '<div class="intro">' + intro.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '</div>' +
-      (list.length ? '<ul class="posts"></ul>' : '<p class="empty">' + esc(UI.none[lang]) + '</p>');
+      (list.length ? '<div class="list-head"><h2>' + esc(L.all[lang]) + '</h2><span>' + list.length + ' ' + esc(L.parts[lang]) + '</span></div><ul class="posts"></ul>'
+        : '<p class="empty">' + esc(UI.none[lang]) + '</p>');
     var ul = main.querySelector('.posts');
     list.forEach(function (p) {
       var t = p[lang];
