@@ -16,6 +16,11 @@ window.POST_FILES = [
   'data/extras-07-12.js',
   'data/extras-13-18.js',
   'data/extras-19-24.js',
+  'data/extras-25-30.js',
+  'data/extras-31-36.js',
+  'data/extras-37-42.js',
+  'data/extras-43-48.js',
+  'data/extras-49-54.js',
   // One infographic per post (window.INFO), drawn by data/infographic.js.
   'data/info-01-18.js',
   'data/info-19-36.js',
