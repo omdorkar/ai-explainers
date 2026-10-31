@@ -114,8 +114,6 @@
     var list = POSTS.slice().sort(function (a, b) { return a.week - b.week; })
       .filter(function (p) { return preview || isPublished(p); });
     var intro = SITE.intro[lang];
-    var guideCount = POSTS.filter(inGuide).length;
-    var released = guideCount ? '<p class="meta">' + esc(UI.released[lang].replace('{n}', guideCount).replace('{d}', fmtDate(SITE.guideReleased))) + '</p>' : '';
     var L = {
       city: { gu: 'વડોદરા', mr: 'वडोदरा', en: 'Vadodara' },
       parts: { gu: 'ભાગ', mr: 'भाग', en: 'parts' },
@@ -130,7 +128,7 @@
       '<li><b>' + esc(L.free[lang]) + '</b>' + esc(L.share[lang]) + '</li></ul>';
     main.innerHTML =
       '<section class="hero"><p class="kicker">' + esc(SITE.author) + ' · ' + esc(L.city[lang]) + '</p>' +
-      '<h1>' + esc(UI.series[lang]) + '</h1><p class="lede">' + esc(UI.lede[lang]) + '</p>' + facts + released + '</section>' +
+      '<h1>' + esc(UI.series[lang]) + '</h1><p class="lede">' + esc(UI.lede[lang]) + '</p>' + facts + '</section>' +
       '<div class="intro">' + intro.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '</div>' +
       (list.length ? '<div class="list-head"><h2>' + esc(L.all[lang]) + '</h2><span>' + list.length + ' ' + esc(L.parts[lang]) + '</span></div><ul class="posts"></ul>'
         : '<p class="empty">' + esc(UI.none[lang]) + '</p>');
