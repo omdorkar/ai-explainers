@@ -29,7 +29,14 @@ function run() {
   var today = fmt.stringFromDate($.NSDate.date).js;
 
   var errors = fileErrors.slice(), warnings = [], ids = {}, weeks = {};
-  var published = [], drafts = [];
+  var published = [], drafts = [], guide = [];
+  var g = SITE.guideReleased, guideLive = false;
+  if (g != null) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(g)) errors.push('SITE.guideReleased must be YYYY-MM-DD or null');
+    else if (g < SITE.seriesStart) errors.push('SITE.guideReleased ' + g + ' is before the series started (' + SITE.seriesStart + '). Backdating is not allowed.');
+    else if (g > today) errors.push('SITE.guideReleased ' + g + ' is in the future.');
+    else guideLive = true;
+  }
 
   POSTS.forEach(function (p) {
     var name = 'week ' + p.week + ' (' + p.id + ')';
@@ -41,14 +48,17 @@ function run() {
       if (!p[l] || !p[l].title) errors.push(name + ': missing ' + l + ' title');
     });
 
-    if (p.published === null) {
-      drafts.push(p);
-      if (!p.template) ['gu', 'mr'].forEach(function (l) {
+    // Guide posts carry no date of their own: they all went online on SITE.guideReleased.
+    if (!p.template) {
+      if (p.published !== null) errors.push(name + ': guide posts take their date from SITE.guideReleased; keep published: null');
+      ['gu', 'mr'].forEach(function (l) {
         if (!p[l].body || !p[l].body.length) errors.push(name + ': missing ' + l + ' body');
         if (!p[l].wa) warnings.push(name + ': no ' + l + ' WhatsApp message');
       });
+      if (guideLive) guide.push(p); else drafts.push(p);
       return;
     }
+    if (p.published === null) { drafts.push(p); return; }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(p.published)) { errors.push(name + ': published must be YYYY-MM-DD or null'); return; }
     if (p.published < SITE.seriesStart) errors.push(name + ': dated ' + p.published + ', before the series started (' + SITE.seriesStart + '). Backdating is not allowed.');
     if (p.published > today) errors.push(name + ': dated ' + p.published + ', which is in the future. Set it on the day you send it.');
@@ -69,7 +79,7 @@ function run() {
 
   var next = drafts.sort(function (a, b) { return a.week - b.week; })[0];
   var out = [];
-  out.push(POSTS.length + ' posts: ' + published.length + ' published, ' + drafts.length + ' drafts (' +
+  out.push(POSTS.length + ' posts: ' + guide.length + ' in the guide' + (guideLive ? ' (released ' + g + ')' : '') + ', ' + published.length + ' dated, ' + drafts.length + ' drafts (' +
     drafts.filter(function (p) { return p.template; }).length + ' are "Om writes" outlines).');
   if (next) out.push('Next to send: week ' + next.week + ', ' + next.en.title + (next.template ? ' (Om writes this one)' : ''));
   warnings.forEach(function (w) { out.push('WARNING ' + w); });

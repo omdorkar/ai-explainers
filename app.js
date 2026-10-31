@@ -3,10 +3,11 @@
   var LANGS = { gu: 'ગુજરાતી', mr: 'मराठी', en: 'English' };
   var UI = {
     series:   { gu: 'તમારી ભાષામાં AI', mr: 'तुमच्या भाषेत AI', en: 'AI in your language' },
-    lede:     { gu: 'દુકાનદારો, પરિવારો અને સૌ માટે સરળ ગુજરાતીમાં AI ની સમજ. દર અઠવાડિયે એક નાની વાત.',
-                mr: 'दुकानदार, कुटुंबे आणि सर्वांसाठी सोप्या मराठीत AI ची ओळख. दर आठवड्याला एक छोटी गोष्ट.',
-                en: 'Plain-language explainers on AI for shop owners, families and anyone curious, in Gujarati and Marathi. One small idea a week.' },
-    week:     { gu: 'અઠવાડિયું', mr: 'आठवडा', en: 'Week' },
+    lede:     { gu: 'દુકાનદારો, પરિવારો અને સૌ માટે સરળ ગુજરાતીમાં AI ની સમજ. દરેક પોસ્ટમાં એક નાની વાત.',
+                mr: 'दुकानदार, कुटुंबे आणि सर्वांसाठी सोप्या मराठीत AI ची ओळख. प्रत्येक पोस्टमध्ये एक छोटी गोष्ट.',
+                en: 'Plain-language explainers on AI for shop owners, families and anyone curious, in Gujarati and Marathi. One small idea in each post.' },
+    part:     { gu: 'ભાગ', mr: 'भाग', en: 'Part' },
+    released: { gu: 'ઓમ દોરકરની {n} ભાગની માર્ગદર્શિકા, {d} ના રોજ પ્રકાશિત', mr: 'ओम दोरकर यांची {n} भागांची मार्गदर्शिका, {d} रोजी प्रकाशित', en: 'A {n}-part guide by Om Dorkar, published {d}' },
     from:     { gu: 'ઓમ તરફથી', mr: 'ओमकडून', en: 'From Om' },
     copy:     { gu: 'કૉપી કરો', mr: 'कॉपी करा', en: 'Copy' },
     copied:   { gu: 'કૉપી થયું ✓', mr: 'कॉपी झाले ✓', en: 'Copied ✓' },
@@ -33,11 +34,26 @@
     location.search = params.toString();
   }
 
-  // A post counts as published only with a real date: not before the series
-  // started and not in the future. Anything else is shown as a draft.
-  function isPublished(p) {
-    return typeof p.published === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(p.published) &&
-      p.published >= SITE.seriesStart && p.published <= today;
+  function validDate(d) {
+    return typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d) && d >= SITE.seriesStart && d <= today;
+  }
+  // Guide posts (everything except "Om writes" posts) went online together on
+  // SITE.guideReleased. "Om writes" posts need their own real date: not before
+  // the series started and not in the future. Anything else is a draft.
+  function inGuide(p) { return !p.template && validDate(SITE.guideReleased); }
+  function isPublished(p) { return inGuide(p) || validDate(p.published); }
+
+  // Part numbers count guide posts only, so they stay the same whatever is published later.
+  var partNo = {};
+  function numberParts() {
+    POSTS.filter(function (p) { return !p.template; })
+      .sort(function (a, b) { return a.week - b.week; })
+      .forEach(function (p, i) { partNo[p.id] = i + 1; });
+  }
+  function label(p) {
+    if (inGuide(p)) return UI.part[lang] + ' ' + partNo[p.id];
+    if (validDate(p.published)) return fmtDate(p.published);
+    return (partNo[p.id] ? UI.part[lang] + ' ' + partNo[p.id] : '') + '<span class="badge">draft</span>';
   }
 
   function esc(s) {
@@ -82,16 +98,16 @@
     var list = POSTS.slice().sort(function (a, b) { return a.week - b.week; })
       .filter(function (p) { return preview || isPublished(p); });
     var intro = SITE.intro[lang];
+    var guideCount = POSTS.filter(inGuide).length;
+    var released = guideCount ? '<p class="meta">' + esc(UI.released[lang].replace('{n}', guideCount).replace('{d}', fmtDate(SITE.guideReleased))) + '</p>' : '';
     main.innerHTML =
-      '<h1>' + esc(UI.series[lang]) + '</h1><p class="lede">' + esc(UI.lede[lang]) + '</p>' +
+      '<h1>' + esc(UI.series[lang]) + '</h1><p class="lede">' + esc(UI.lede[lang]) + '</p>' + released +
       '<div class="intro">' + intro.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '</div>' +
       (list.length ? '<ul class="posts"></ul>' : '<p class="empty">' + esc(UI.none[lang]) + '</p>');
     var ul = main.querySelector('.posts');
     list.forEach(function (p) {
       var t = p[lang];
-      var pub = isPublished(p);
-      ul.appendChild(el('<li><div class="meta">' + esc(UI.week[lang]) + ' ' + p.week +
-        (pub ? ' · ' + esc(fmtDate(p.published)) : '<span class="badge">draft</span>') + '</div>' +
+      ul.appendChild(el('<li><div class="meta">' + label(p) + '</div>' +
         '<a class="title" href="post.html?id=' + p.id + '&lang=' + lang + (preview ? '&preview=1' : '') + '">' + esc(t.title || p.en.title) + '</a>' +
         '<div>' + esc(t.summary || '') + '</div></li>'));
     });
@@ -113,7 +129,7 @@
 
     var wa = (t.wa || p.en.wa || '').replace('{link}', postUrl(p));
     main.innerHTML =
-      '<p class="meta">' + esc(UI.week[lang]) + ' ' + p.week + (pub ? ' · ' + esc(fmtDate(p.published)) + ' · ' + esc(SITE.author) : '') + '</p>' +
+      '<p class="meta">' + label(p) + (pub ? ' · ' + esc(SITE.author) : '') + '</p>' +
       '<h1>' + esc(t.title || p.en.title) + '</h1>' +
       '<p class="lede">' + esc(t.summary || '') + '</p>' + noteHtml +
       renderBlocks(t.body && t.body.length ? t.body : p.en.body) +
@@ -151,7 +167,7 @@
   }
 
   loadAll(POST_FILES, function () {
-    header(); footer();
+    numberParts(); header(); footer();
     if (document.body.dataset.page === 'post') renderPost(); else renderIndex();
   });
 })();

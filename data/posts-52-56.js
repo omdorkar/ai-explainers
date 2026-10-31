@@ -23,7 +23,6 @@ window.POSTS.push(
         'Posts that were unclear, advice that changed, things readers corrected.',
         { h: 'Thank you' },
         'The people who reviewed the Gujarati and Marathi, shared posts or asked questions (with permission).',
-        'Next week: which skills matter more now.',
       ],
       wa: '',
     },
@@ -44,7 +43,7 @@ window.POSTS.push(
       title: 'Which skills matter more now',
       summary: 'When AI can write and calculate quickly, the human skills around it matter more: knowing what to ask, checking the answer, and earning people’s trust.',
       body: [
-        'Week 24 asked “Will AI take my job?”. This week is the practical follow-up: what should we get better at?',
+        'An earlier post asked “Will AI take my job?”. This one is the practical follow-up: what should we get better at?',
         { h: 'Skills that grow in value' },
         { list: [
           'Asking clear questions: of people and of AI',
@@ -62,15 +61,14 @@ window.POSTS.push(
         ] },
         { ask: 'I am a [your work] and can spend 20 minutes a day. Make me a simple 4-week plan to learn one new skill that would help my work. Explain in simple Gujarati.' },
         { tip: 'AI is a good study partner: ask it to quiz you at the end of each week on what you learned.' },
-        'Next week: practising spoken English with AI.',
       ],
-      wa: '🧠 *AI in your language — Week 53: Skills that matter more*\n✅ Asking clear questions\n✅ Checking answers and facts\n✅ Explaining simply\n✅ Trust with people\n✅ Your own trade\n📚 Free: skillindiadigital.gov.in, swayam.gov.in\nRead more: {link}',
+      wa: '🧠 *AI in your language — Skills that matter more*\n✅ Asking clear questions\n✅ Checking answers and facts\n✅ Explaining simply\n✅ Trust with people\n✅ Your own trade\n📚 Free: skillindiadigital.gov.in, swayam.gov.in\nRead more: {link}',
     },
     gu: {
       title: 'હવે કઈ આવડત વધુ મહત્ત્વની છે',
       summary: 'AI ઝડપથી લખી અને ગણી શકે ત્યારે તેની આસપાસની માનવીય આવડત વધુ મહત્ત્વની બને છે: શું પૂછવું તે જાણવું, જવાબ તપાસવો, અને લોકોનો વિશ્વાસ જીતવો.',
       body: [
-        'અઠવાડિયા 24 માં પ્રશ્ન હતો “શું AI મારી નોકરી લઈ લેશે?”. આ અઠવાડિયે તેનો વ્યવહારુ આગળનો ભાગ: આપણે શેમાં વધુ સારા થવું જોઈએ?',
+        'અગાઉની એક પોસ્ટમાં પ્રશ્ન હતો “શું AI મારી નોકરી લઈ લેશે?”. આ પોસ્ટ તેનો વ્યવહારુ આગળનો ભાગ છે: આપણે શેમાં વધુ સારા થવું જોઈએ?',
         { h: 'જેની કિંમત વધી રહી છે તે આવડત' },
         { list: [
           'સ્પષ્ટ પ્રશ્ન પૂછવા: લોકોને અને AI ને',
@@ -88,15 +86,14 @@ window.POSTS.push(
         ] },
         { ask: 'હું [તમારું કામ] છું અને રોજ 20 મિનિટ આપી શકું છું. મારા કામમાં મદદ કરે તેવી એક નવી આવડત શીખવા માટે 4 અઠવાડિયાંની સાદી યોજના બનાવો. સરળ ગુજરાતીમાં સમજાવો.' },
         { tip: 'AI અભ્યાસનો સારો સાથી છે: દર અઠવાડિયાના અંતે તમે જે શીખ્યા તેના પર તમને પ્રશ્નો પૂછવા કહો.' },
-        'આવતા અઠવાડિયે: AI સાથે અંગ્રેજી બોલવાની પ્રૅક્ટિસ.',
       ],
-      wa: '🧠 *તમારી ભાષામાં AI — અઠવાડિયું 53: વધુ મહત્ત્વની આવડત*\n✅ સ્પષ્ટ પ્રશ્ન પૂછવા\n✅ જવાબ અને હકીકતો તપાસવી\n✅ સરળ રીતે સમજાવવું\n✅ લોકો સાથે વિશ્વાસ\n✅ તમારો પોતાનો ધંધો\n📚 મફત: skillindiadigital.gov.in, swayam.gov.in\nવધુ વાંચો: {link}',
+      wa: '🧠 *તમારી ભાષામાં AI — વધુ મહત્ત્વની આવડત*\n✅ સ્પષ્ટ પ્રશ્ન પૂછવા\n✅ જવાબ અને હકીકતો તપાસવી\n✅ સરળ રીતે સમજાવવું\n✅ લોકો સાથે વિશ્વાસ\n✅ તમારો પોતાનો ધંધો\n📚 મફત: skillindiadigital.gov.in, swayam.gov.in\nવધુ વાંચો: {link}',
     },
     mr: {
       title: 'आता कोणती कौशल्ये जास्त महत्त्वाची आहेत',
       summary: 'AI पटकन लिहू आणि मोजू शकतो तेव्हा त्याच्या आजूबाजूची मानवी कौशल्ये जास्त महत्त्वाची ठरतात: काय विचारायचे ते जाणणे, उत्तर तपासणे, आणि लोकांचा विश्वास मिळवणे.',
       body: [
-        'आठवडा 24 मध्ये प्रश्न होता “AI माझी नोकरी घेईल का?”. या आठवड्यात त्याचा व्यावहारिक पुढचा भाग: आपण कशात अधिक चांगले व्हायला हवे?',
+        'आधीच्या एका पोस्टमध्ये प्रश्न होता “AI माझी नोकरी घेईल का?”. ही पोस्ट त्याचा व्यावहारिक पुढचा भाग आहे: आपण कशात अधिक चांगले व्हायला हवे?',
         { h: 'ज्यांचे मूल्य वाढत आहे अशी कौशल्ये' },
         { list: [
           'स्पष्ट प्रश्न विचारणे: माणसांना आणि AI ला',
@@ -114,9 +111,8 @@ window.POSTS.push(
         ] },
         { ask: 'मी [तुमचे काम] आहे आणि रोज 20 मिनिटे देऊ शकतो. माझ्या कामात मदत करेल असे एक नवीन कौशल्य शिकण्यासाठी 4 आठवड्यांची साधी योजना बनवा. सोप्या मराठीत समजावा.' },
         { tip: 'AI हा अभ्यासाचा चांगला सोबती आहे: प्रत्येक आठवड्याच्या शेवटी तुम्ही जे शिकलात त्यावर तुम्हाला प्रश्न विचारायला सांगा.' },
-        'पुढच्या आठवड्यात: AI सोबत इंग्रजी बोलण्याचा सराव.',
       ],
-      wa: '🧠 *तुमच्या भाषेत AI — आठवडा 53: जास्त महत्त्वाची कौशल्ये*\n✅ स्पष्ट प्रश्न विचारणे\n✅ उत्तरे आणि तथ्ये तपासणे\n✅ सोप्या भाषेत समजावणे\n✅ लोकांशी विश्वास\n✅ तुमचा स्वतःचा व्यवसाय\n📚 मोफत: skillindiadigital.gov.in, swayam.gov.in\nअधिक वाचा: {link}',
+      wa: '🧠 *तुमच्या भाषेत AI — जास्त महत्त्वाची कौशल्ये*\n✅ स्पष्ट प्रश्न विचारणे\n✅ उत्तरे आणि तथ्ये तपासणे\n✅ सोप्या भाषेत समजावणे\n✅ लोकांशी विश्वास\n✅ तुमचा स्वतःचा व्यवसाय\n📚 मोफत: skillindiadigital.gov.in, swayam.gov.in\nअधिक वाचा: {link}',
     },
   },
 
@@ -150,9 +146,8 @@ window.POSTS.push(
           'Your child’s parent-teacher meeting',
         ] },
         { tip: 'Ten minutes every day is better than one hour on Sunday. Put it after something you already do daily, like morning tea.' },
-        'Next week: a simple website for your shop.',
       ],
-      wa: '🗣️ *AI in your language — Week 54: Practise spoken English*\n1️⃣ Voice mode in ChatGPT/Gemini\n2️⃣ Tell it your level and a situation (customer, interview, phone call)\n3️⃣ Speak, even with mistakes\n4️⃣ Ask for your top 3 mistakes\n⏱️ 10 minutes daily > 1 hour on Sunday.\nRead more: {link}',
+      wa: '🗣️ *AI in your language — Practise spoken English*\n1️⃣ Voice mode in ChatGPT/Gemini\n2️⃣ Tell it your level and a situation (customer, interview, phone call)\n3️⃣ Speak, even with mistakes\n4️⃣ Ask for your top 3 mistakes\n⏱️ 10 minutes daily > 1 hour on Sunday.\nRead more: {link}',
     },
     gu: {
       title: 'AI સાથે અંગ્રેજી બોલવાની પ્રૅક્ટિસ',
@@ -175,9 +170,8 @@ window.POSTS.push(
           'તમારા બાળકની વાલી-શિક્ષક મીટિંગ',
         ] },
         { tip: 'રવિવારે એક કલાક કરતાં રોજ દસ મિનિટ વધુ સારી. તમે રોજ કરો જ છો એવી કોઈ ટેવ પછી રાખો, જેમ કે સવારની ચા.' },
-        'આવતા અઠવાડિયે: તમારી દુકાન માટે સાદી વેબસાઇટ.',
       ],
-      wa: '🗣️ *તમારી ભાષામાં AI — અઠવાડિયું 54: અંગ્રેજી બોલવાની પ્રૅક્ટિસ*\n1️⃣ ChatGPT/Gemini માં વોઇસ મોડ\n2️⃣ તમારું સ્તર અને પરિસ્થિતિ કહો (ગ્રાહક, ઇન્ટરવ્યૂ, ફોન)\n3️⃣ ભૂલો સાથે પણ બોલો\n4️⃣ તમારી ટોચની 3 ભૂલો પૂછો\n⏱️ રોજ 10 મિનિટ > રવિવારે 1 કલાક.\nવધુ વાંચો: {link}',
+      wa: '🗣️ *તમારી ભાષામાં AI — અંગ્રેજી બોલવાની પ્રૅક્ટિસ*\n1️⃣ ChatGPT/Gemini માં વોઇસ મોડ\n2️⃣ તમારું સ્તર અને પરિસ્થિતિ કહો (ગ્રાહક, ઇન્ટરવ્યૂ, ફોન)\n3️⃣ ભૂલો સાથે પણ બોલો\n4️⃣ તમારી ટોચની 3 ભૂલો પૂછો\n⏱️ રોજ 10 મિનિટ > રવિવારે 1 કલાક.\nવધુ વાંચો: {link}',
     },
     mr: {
       title: 'AI सोबत इंग्रजी बोलण्याचा सराव',
@@ -200,9 +194,8 @@ window.POSTS.push(
           'तुमच्या मुलाची पालक-शिक्षक बैठक',
         ] },
         { tip: 'रविवारी एका तासापेक्षा रोज दहा मिनिटे अधिक चांगली. तुम्ही रोज करताच अशा एखाद्या सवयीनंतर ठेवा, जसे सकाळचा चहा.' },
-        'पुढच्या आठवड्यात: तुमच्या दुकानासाठी साधी वेबसाइट.',
       ],
-      wa: '🗣️ *तुमच्या भाषेत AI — आठवडा 54: इंग्रजी बोलण्याचा सराव*\n1️⃣ ChatGPT/Gemini मध्ये व्हॉइस मोड\n2️⃣ तुमची पातळी आणि परिस्थिती सांगा (ग्राहक, मुलाखत, फोन)\n3️⃣ चुका झाल्या तरी बोला\n4️⃣ तुमच्या मुख्य 3 चुका विचारा\n⏱️ रोज 10 मिनिटे > रविवारी 1 तास.\nअधिक वाचा: {link}',
+      wa: '🗣️ *तुमच्या भाषेत AI — इंग्रजी बोलण्याचा सराव*\n1️⃣ ChatGPT/Gemini मध्ये व्हॉइस मोड\n2️⃣ तुमची पातळी आणि परिस्थिती सांगा (ग्राहक, मुलाखत, फोन)\n3️⃣ चुका झाल्या तरी बोला\n4️⃣ तुमच्या मुख्य 3 चुका विचारा\n⏱️ रोज 10 मिनिटे > रविवारी 1 तास.\nअधिक वाचा: {link}',
     },
   },
 
@@ -235,9 +228,8 @@ window.POSTS.push(
         ] },
         { ask: 'Write the text for a one-page website for my mobile repair shop in Vadodara: a heading, a 2-line introduction, 6 services with starting prices [list them], timings and a line inviting people to WhatsApp us. Gujarati and English.' },
         { tip: 'A website with old prices or wrong timings does more harm than no website. Only make one if you will keep it updated.' },
-        'Next week: spreadsheet formulas, explained by AI.',
       ],
-      wa: '🌐 *AI in your language — Week 55: A simple website*\nCustomers want: what you sell, prices, timings, how to reach you.\n✅ Free: Google Sites, WhatsApp catalogue link, Google Maps\n🤖 AI writes the text\n⚠️ Only make one if you’ll keep it updated.\nRead more: {link}',
+      wa: '🌐 *AI in your language — A simple website*\nCustomers want: what you sell, prices, timings, how to reach you.\n✅ Free: Google Sites, WhatsApp catalogue link, Google Maps\n🤖 AI writes the text\n⚠️ Only make one if you’ll keep it updated.\nRead more: {link}',
     },
     gu: {
       title: 'તમારી દુકાન માટે સાદી વેબસાઇટ',
@@ -259,9 +251,8 @@ window.POSTS.push(
         ] },
         { ask: 'વડોદરામાં મારી મોબાઇલ રિપેરની દુકાન માટે એક પાનાની વેબસાઇટનું લખાણ લખો: શીર્ષક, 2 લાઇનનો પરિચય, શરૂઆતના ભાવ સાથે 6 સેવાઓ [યાદી આપો], સમય અને WhatsApp પર સંપર્ક કરવા આમંત્રણની એક લાઇન. ગુજરાતી અને અંગ્રેજીમાં.' },
         { tip: 'જૂના ભાવ કે ખોટા સમયવાળી વેબસાઇટ, વેબસાઇટ ન હોવા કરતાં વધુ નુકસાન કરે છે. અપડેટ રાખી શકો તો જ બનાવો.' },
-        'આવતા અઠવાડિયે: AI સમજાવે સ્પ્રેડશીટનાં ફોર્મ્યુલા.',
       ],
-      wa: '🌐 *તમારી ભાષામાં AI — અઠવાડિયું 55: સાદી વેબસાઇટ*\nગ્રાહકોને જોઈએ: શું વેચો છો, ભાવ, સમય, સંપર્ક.\n✅ મફત: Google Sites, WhatsApp કૅટલૉગ લિંક, Google Maps\n🤖 લખાણ AI લખે\n⚠️ અપડેટ રાખી શકો તો જ બનાવો.\nવધુ વાંચો: {link}',
+      wa: '🌐 *તમારી ભાષામાં AI — સાદી વેબસાઇટ*\nગ્રાહકોને જોઈએ: શું વેચો છો, ભાવ, સમય, સંપર્ક.\n✅ મફત: Google Sites, WhatsApp કૅટલૉગ લિંક, Google Maps\n🤖 લખાણ AI લખે\n⚠️ અપડેટ રાખી શકો તો જ બનાવો.\nવધુ વાંચો: {link}',
     },
     mr: {
       title: 'तुमच्या दुकानासाठी साधी वेबसाइट',
@@ -283,9 +274,8 @@ window.POSTS.push(
         ] },
         { ask: 'वडोदऱ्यातील माझ्या मोबाइल दुरुस्तीच्या दुकानासाठी एका पानाच्या वेबसाइटचा मजकूर लिहा: शीर्षक, 2 ओळींची ओळख, सुरुवातीच्या दरांसह 6 सेवा [यादी द्या], वेळा आणि WhatsApp वर संपर्क करण्याचे आमंत्रण देणारी एक ओळ. मराठी आणि इंग्रजीत.' },
         { tip: 'जुने दर किंवा चुकीच्या वेळा असलेली वेबसाइट, वेबसाइट नसण्यापेक्षा जास्त नुकसान करते. अद्ययावत ठेवू शकत असाल तरच बनवा.' },
-        'पुढच्या आठवड्यात: AI ने समजावलेली स्प्रेडशीटची सूत्रे.',
       ],
-      wa: '🌐 *तुमच्या भाषेत AI — आठवडा 55: साधी वेबसाइट*\nग्राहकांना हवे: काय विकता, दर, वेळा, संपर्क.\n✅ मोफत: Google Sites, WhatsApp कॅटलॉग लिंक, Google Maps\n🤖 मजकूर AI लिहितो\n⚠️ अद्ययावत ठेवू शकत असाल तरच बनवा.\nअधिक वाचा: {link}',
+      wa: '🌐 *तुमच्या भाषेत AI — साधी वेबसाइट*\nग्राहकांना हवे: काय विकता, दर, वेळा, संपर्क.\n✅ मोफत: Google Sites, WhatsApp कॅटलॉग लिंक, Google Maps\n🤖 मजकूर AI लिहितो\n⚠️ अद्ययावत ठेवू शकत असाल तरच बनवा.\nअधिक वाचा: {link}',
     },
   },
 
@@ -318,9 +308,8 @@ window.POSTS.push(
           'Only then copy the formula down the whole sheet',
         ] },
         { tip: 'Tell AI whether you use Google Sheets or Excel, and whether your phone uses commas or semicolons in formulas. Small differences break formulas.' },
-        'Next week: free or paid AI, is it worth paying?',
       ],
-      wa: '📊 *AI in your language — Week 56: Spreadsheet formulas*\nDescribe what you want: “Add up column C only where B says cash”.\n🤖 AI writes the formula and explains it.\n✅ Test on 5–6 rows you can check by hand.\n💡 Say Google Sheets or Excel.\nRead more: {link}',
+      wa: '📊 *AI in your language — Spreadsheet formulas*\nDescribe what you want: “Add up column C only where B says cash”.\n🤖 AI writes the formula and explains it.\n✅ Test on 5–6 rows you can check by hand.\n💡 Say Google Sheets or Excel.\nRead more: {link}',
     },
     gu: {
       title: 'AI સમજાવે સ્પ્રેડશીટનાં ફોર્મ્યુલા',
@@ -342,9 +331,8 @@ window.POSTS.push(
           'પછી જ આખી શીટમાં ફોર્મ્યુલા નીચે કૉપી કરો',
         ] },
         { tip: 'AI ને જણાવો કે તમે Google Sheets વાપરો છો કે Excel, અને તમારા ફોનમાં ફોર્મ્યુલામાં અલ્પવિરામ (,) વપરાય છે કે અર્ધવિરામ (;). નાના ફરકથી ફોર્મ્યુલા તૂટી જાય છે.' },
-        'આવતા અઠવાડિયે: મફત કે પૈસાવાળું AI — પૈસા ખર્ચવા યોગ્ય છે?',
       ],
-      wa: '📊 *તમારી ભાષામાં AI — અઠવાડિયું 56: સ્પ્રેડશીટ ફોર્મ્યુલા*\nજોઈતું વર્ણવો: “જ્યાં B માં રોકડ હોય ત્યાં C નો સરવાળો કરો”.\n🤖 AI ફોર્મ્યુલા લખે અને સમજાવે.\n✅ હાથે તપાસી શકો તેવી 5–6 લાઇનો પર ચકાસો.\n💡 Google Sheets કે Excel તે જણાવો.\nવધુ વાંચો: {link}',
+      wa: '📊 *તમારી ભાષામાં AI — સ્પ્રેડશીટ ફોર્મ્યુલા*\nજોઈતું વર્ણવો: “જ્યાં B માં રોકડ હોય ત્યાં C નો સરવાળો કરો”.\n🤖 AI ફોર્મ્યુલા લખે અને સમજાવે.\n✅ હાથે તપાસી શકો તેવી 5–6 લાઇનો પર ચકાસો.\n💡 Google Sheets કે Excel તે જણાવો.\nવધુ વાંચો: {link}',
     },
     mr: {
       title: 'AI ने समजावलेली स्प्रेडशीटची सूत्रे',
@@ -366,9 +354,8 @@ window.POSTS.push(
           'मगच संपूर्ण शीटमध्ये सूत्र खाली कॉपी करा',
         ] },
         { tip: 'तुम्ही Google Sheets वापरता की Excel, आणि तुमच्या फोनमध्ये सूत्रांत स्वल्पविराम (,) वापरला जातो की अर्धविराम (;), हे AI ला सांगा. छोट्या फरकांनी सूत्रे बिघडतात.' },
-        'पुढच्या आठवड्यात: मोफत की पैसे भरून AI — पैसे देणे योग्य आहे का?',
       ],
-      wa: '📊 *तुमच्या भाषेत AI — आठवडा 56: स्प्रेडशीट सूत्रे*\nहवे ते सांगा: “जिथे B मध्ये रोख आहे तिथे C ची बेरीज करा”.\n🤖 AI सूत्र लिहितो आणि समजावतो.\n✅ हाताने तपासता येतील अशा 5–6 ओळींवर चाचणी करा.\n💡 Google Sheets की Excel ते सांगा.\nअधिक वाचा: {link}',
+      wa: '📊 *तुमच्या भाषेत AI — स्प्रेडशीट सूत्रे*\nहवे ते सांगा: “जिथे B मध्ये रोख आहे तिथे C ची बेरीज करा”.\n🤖 AI सूत्र लिहितो आणि समजावतो.\n✅ हाताने तपासता येतील अशा 5–6 ओळींवर चाचणी करा.\n💡 Google Sheets की Excel ते सांगा.\nअधिक वाचा: {link}',
     },
   }
 );

@@ -1,28 +1,30 @@
-# Publishing one post a week
+# Publishing
 
-All 60 posts are drafts (`published: null`). The site shows nothing until Om publishes week 1.
-See every draft locally by opening `index.html?preview=1`.
+The 54 guide posts went online together on 31 October 2026 (`SITE.guideReleased` in `data/site.js`).
+They show as "Part 1" to "Part 54", with no separate dates. Guide posts keep `published: null`.
 
-## Every week
+Check everything before pushing: `osascript -l JavaScript tools/check_posts.js` must say `OK`.
+See drafts locally with `index.html?preview=1`.
 
-1. Open the next draft (the checker names it: `osascript -l JavaScript tools/check_posts.js`).
-2. Read the Gujarati and Marathi. Change anything that does not sound like you.
-3. Fill in `om_note.text.gu` and `om_note.text.mr` (and `en` if you like): one or two lines in your own words, answering the `prompt`. Only things that really happened.
-4. Get the language checked. Put the reviewer's name in `review.gu` and `review.mr` (or `'self'` if you are fluent and checked it yourself).
-5. Send the WhatsApp message (`wa`) to your group or channel.
-6. On the same day, set `published` to today's date, e.g. `'2026-11-02'`.
-7. Run the checker. It must say `OK`. Then push.
+## Sharing on WhatsApp
+
+Each post has a ready message (`wa`) and a "Send on WhatsApp" button. Sending one part a week to a group or channel is a good way to share the guide, and it builds a real record from now on.
+
+## "Om writes" posts
+
+Weeks 10, 13, 26, 39, 52 and 60 in `docs/SERIES_PLAN.md` (reader questions and look-backs) are outlines. To publish one:
+
+1. Write the Gujarati and Marathi body yourself, from real questions and real numbers only.
+2. Fill in `om_note.text.gu` and `om_note.text.mr`.
+3. Put the reviewer's name in `review.gu` and `review.mr` (or `'self'`).
+4. Set `published` to the day you actually publish it.
+5. Run the checker and push.
 
 ## Rules the checker enforces
 
-- No date before the series started (`SITE.seriesStart`, 30 Oct 2026), and no date in the future. Nothing can be backdated.
-- No published post without Om's own note and a language review.
-- "Om writes" posts (weeks 10, 13, 26, 39, 52, 60) cannot be published until Om has written their Gujarati and Marathi body himself, from real questions and real numbers.
-
-## If a week is missed
-
-Publish the next post on the day you actually send it. Gaps are fine and honest; do not fill them later with earlier dates.
+- No date before 30 October 2026 (`SITE.seriesStart`) and no date in the future, for the guide release and for every dated post. Nothing can be backdated.
+- "Om writes" posts need Om's note, a language review and a written body before they can be published.
 
 ## Facts that can go out of date
 
-Before sending a post, check that the apps, websites and helplines named in it still exist and work. These include 1930, cybercrime.gov.in, myScheme, Sanchar Saathi, Kisan Call Centre and eSanjeevani.
+Every few months, check that the apps, websites and helplines named in the posts still exist and work. These include 1930, cybercrime.gov.in, myScheme, Sanchar Saathi, Kisan Call Centre and eSanjeevani.
