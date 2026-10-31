@@ -83,3 +83,22 @@ footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .85r
 .fg-arrow { stroke: var(--muted); stroke-width: 2; fill: none; stroke-linecap: round; }
 .fg-ah { fill: var(--muted); }
 @media print { .fig { break-inside: avoid; } }
+/* Infographics (data/infographic.js): wide layout on big screens and print, stacked on phones */
+.fig.info { max-width: 100%; }
+.fig svg.info-wide { display: none; }
+@media (min-width: 640px) { .fig svg.info-wide { display: block; } .fig svg.info-narrow { display: none; } }
+@media print { .fig svg.info-wide { display: block !important; } .fig svg.info-narrow { display: none !important; } }
+.fg-title, .fg-accent { fill: var(--accent); }
+.fg-banner { fill: var(--accent-soft); }
+.fg-line, .fg-arrow-ink { stroke: var(--ink); stroke-width: 2.5; fill: none; }
+.fg-ah-ink { fill: var(--ink); }
+.ic-s { stroke: var(--ink); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ic-f { fill: var(--accent); stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+.ic-a { fill: var(--accent-soft); }
+.ic-w { fill: #fff; }
+.ic-dot { fill: var(--ink); }
+.ic-ok { fill: #2f9e55; }
+.ic-bad { fill: var(--bad); }
+.ic-flame { fill: #f5a524; }
+.ic-teeth { fill: none; stroke: var(--accent); stroke-width: 7; stroke-dasharray: 5 4; }
+.ic-teeth2 { fill: none; stroke: var(--ink); stroke-width: 5; stroke-dasharray: 4 3; }

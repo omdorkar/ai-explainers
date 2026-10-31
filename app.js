@@ -86,6 +86,7 @@
       if (b.list) return '<ul>' + b.list.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>';
       if (b.steps) return '<ol>' + b.steps.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ol>';
       if (b.tip) return '<div class="tip">' + esc(b.tip) + '</div>';
+      if (b.info) return window.infographic ? '<figure class="fig info">' + infographic(INFO[b.info], lang) + '</figure>' : '';
       if (b.fig) return window.FIGS && FIGS[b.fig]
         ? '<figure class="fig">' + FIGS[b.fig](lang) + (b.cap ? '<figcaption>' + esc(b.cap) + '</figcaption>' : '') + '</figure>' : '';
       if (b.ask) return '<div class="ask"><p class="meta">' + esc(UI.tryThis[lang]) + '</p><p data-ask>' + esc(b.ask) + '</p><button type="button" data-copy>' + esc(UI.copy[lang]) + '</button></div>';
@@ -95,11 +96,14 @@
 
   // Extra detail and pictures live in data/extras-*.js, keyed by post id:
   // the picture goes after the first paragraph, the extra sections at the end.
+  // The infographic (data/info-*.js) opens the post; a step diagram, if any,
+  // opens the extra sections.
   function withExtras(p, body) {
-    var x = window.EXTRAS && EXTRAS[p.id];
-    if (!x) return body;
     var out = body.slice();
-    if (x.fig) out.splice(1, 0, { fig: x.fig, cap: x.cap ? (x.cap[lang] || x.cap.en) : '' });
+    if (window.INFO && INFO[p.id]) out.unshift({ info: p.id });
+    var x = window.EXTRAS && EXTRAS[p.id];
+    if (!x) return out;
+    if (x.fig) out.push({ fig: x.fig, cap: x.cap ? (x.cap[lang] || x.cap.en) : '' });
     return out.concat((x.more && (x.more[lang] || x.more.en)) || []);
   }
 

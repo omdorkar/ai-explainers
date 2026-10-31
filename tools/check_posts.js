@@ -19,6 +19,7 @@ function run() {
   load('data/manifest.js');
   window.POSTS = []; window.EXTRAS = {};
   load('data/figures.js');
+  load('data/infographic.js');
   var fileErrors = [];
   window.POST_FILES.forEach(function (f) {
     try { load(f); } catch (e) { fileErrors.push(f + ': ' + e.message); }
@@ -71,6 +72,17 @@ function run() {
     });
     published.push(p);
   });
+
+  POSTS.forEach(function (p) {
+    if (p.template) return;
+    var s = window.INFO[p.id];
+    if (!s) { warnings.push('week ' + p.week + ' (' + p.id + '): no infographic yet'); return; }
+    if (!s.steps || s.steps.length !== 3 || !s.cols || s.cols.length !== 3) errors.push(p.id + ': infographic needs 3 steps and 3 columns');
+    (s.cols || []).forEach(function (c) { if (!window.ICONS[c[0]]) errors.push(p.id + ': unknown icon ' + c[0]); if (!c[3] || !c[4]) errors.push(p.id + ': infographic points missing in gu or mr'); });
+    if (s.lead && !window.ICONS[s.lead[0]]) errors.push(p.id + ': unknown icon ' + s.lead[0]);
+    ['en', 'gu', 'mr'].forEach(function (l) { try { window.infographic(s, l); } catch (e) { errors.push(p.id + ': infographic fails in ' + l + ': ' + e.message); } });
+  });
+  Object.keys(window.INFO).forEach(function (id) { if (!ids[id]) errors.push('infographic for unknown post id: ' + id); });
 
   Object.keys(window.EXTRAS).forEach(function (id) {
     var x = window.EXTRAS[id];

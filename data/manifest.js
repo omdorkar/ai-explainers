@@ -13,4 +13,8 @@ window.POST_FILES = [
   'data/posts-57-60.js',
   // Extra detail and pictures (window.EXTRAS), merged into posts by id.
   'data/extras-01-06.js',
+  // One infographic per post (window.INFO), drawn by data/infographic.js.
+  'data/info-01-18.js',
+  'data/info-19-36.js',
+  'data/info-37-54.js',
 ];
